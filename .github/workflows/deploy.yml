@@ -32,17 +32,20 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: campus-event-scheduling-main/f2/package-lock.json
 
       - name: Install dependencies
+        working-directory: campus-event-scheduling-main/f2
         run: npm ci
 
       - name: Build React app
+        working-directory: campus-event-scheduling-main/f2
         run: npm run build
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: campus-event-scheduling-main/f2/dist
 
       - name: Deploy website
         id: deployment
