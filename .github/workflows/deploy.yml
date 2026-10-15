@@ -31,8 +31,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: campus-event-scheduling-main/f2/package-lock.json
+  
 
       - name: Install dependencies
         working-directory: campus-event-scheduling-main/f2
